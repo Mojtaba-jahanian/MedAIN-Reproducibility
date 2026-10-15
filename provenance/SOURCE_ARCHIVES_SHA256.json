@@ -1,0 +1,9 @@
+{
+  "stage10ab_results_zip_sha256": "7fcec646f953082a7cdb3ace7005db29c4b7db5727d33aa8016c13791ef6dc69",
+  "manuscript_candidate_source_zip_sha256": "11d8b6c5f2984c5dd675e78793ed37632191101d977d73da1d213859a66814b8",
+  "historical_source_bundle_zip_sha256": "916eb5bac45be7b10139ae7b71e12c13f3819eda0b9c63c89d0cbca9416ba040",
+  "historical_stage9a_pilot_zip_sha256": "9b85c6ce4b9ffb026683081f88db699b5a9b16e292ac07cb937eecd3ea64c081",
+  "stage10ab_original_runner_sha256": "08985b61df5b550fb1666b4a1fc0a87ffcb44b124101eb1c65a852ee6bbece6f",
+  "stage7rc_run_summary_absolute_paths_redacted": 30,
+  "note": "Hashes of author-provided local archives; originals not redistributed here."
+}

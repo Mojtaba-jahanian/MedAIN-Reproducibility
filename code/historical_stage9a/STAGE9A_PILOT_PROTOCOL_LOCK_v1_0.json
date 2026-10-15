@@ -1,0 +1,119 @@
+{
+  "project": "MedAIN",
+  "stage": "Stage9A Prospective Pilot",
+  "version": "1.0",
+  "status": "FROZEN_BEFORE_FORMAL_STAGE9A_PILOT",
+  "scientific_question": "Does task-protected basis selection reduce task-relevant leakage relative to acquisition-only suppression while retaining non-trivial acquisition capture?",
+  "design_role": "Prospective novelty-dissection pilot. This is a new experiment and is not an attempt to reproduce or replace historical Stage6R/Stage7R numerical results.",
+  "recovery_limitation": {
+    "historical_epoch0_basis_exactly_reproduced": false,
+    "blocking_for_stage9a": false,
+    "reason": "The original Stage6R-A identity-repair artifact / exact historical row-order was not recovered. Data identity, preprocessing, source counts, and split assignments were independently reconstructed and audited. Stage9A therefore uses a new row-order-invariant, prospectively locked basis-sample rule.",
+    "historical_results_policy": "Historical Stage6R/Stage7R results remain reported from their preserved archives and are not overwritten by Stage9A."
+  },
+  "data_lock": {
+    "source_dataset": "RIGA+ only",
+    "n_source_rows": 744,
+    "external_data_used": false,
+    "held_out_target_test_used": false,
+    "source_validation_used": true,
+    "cache_manifest_sha256": "bcfd57bf05d5bf6d37b52f0ecc13a85dd8b918238a6fb8f078d87302877bce3c",
+    "lodo_manifest_sha256_after_schema_reconciliation": {
+      "BinRushed": "fa27ad605e248321463a7370b981ef85215df9458c45d7fd14949b9e851e867d",
+      "Magrabia": "0a5e4ef79aab9d3c843fc98d2e5c2263cfc063ade33ad037afdfc4c15267fdf3",
+      "MESSIDOR_Base1": "9c0c8f0dc988504927e9e487988dfeffd4e12fc55979a3b8ffff15c12c135901",
+      "MESSIDOR_Base2": "110d40f767f1711dc8255f3e62e5040f5a57367e85973a4b04d19a6e36a13c54",
+      "MESSIDOR_Base3": "532de1141272df060303206d13d5227638e66d49aa426bbee14d9299e3fba831"
+    },
+    "split_assignment_digests": {
+      "BinRushed": "43243b216cf6c80af8335ece6cbfa6ef018d42fb0b732e8d0927064454dc7b8e",
+      "Magrabia": "d360c5c532b5dbb4730cd93a8c1e2571cd1ec1c10d4402c4abeef1ea610639a4",
+      "MESSIDOR_Base1": "1498e3b265e288b490bc80d1bbbfc13a81a49a1bb603b139232bee6c64369e77",
+      "MESSIDOR_Base2": "ffa9f8278ae1b92ae2a26b8e57d3a8150af2f89745f671751e9ac1e5fbe49316",
+      "MESSIDOR_Base3": "87c48351c411f5cd674cdf763c09434b7882c2961ca4d64db4a02bbf0012e85b"
+    }
+  },
+  "pilot_anchor_training": {
+    "model": "ResNet18-U-Net",
+    "weights": "ImageNet-1K ResNet18 initialization",
+    "method": "ERM anchor only",
+    "folds": [
+      "BinRushed",
+      "Magrabia",
+      "MESSIDOR_Base1",
+      "MESSIDOR_Base2",
+      "MESSIDOR_Base3"
+    ],
+    "seed": 1103,
+    "n_anchor_models": 5,
+    "epochs_max": 60,
+    "early_stopping_patience": 10,
+    "batch_size": 8,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "scheduler": "CosineAnnealingLR(T_max=60)",
+    "source_validation_checkpoint_selection": true,
+    "target_test_evaluation": false,
+    "external_evaluation": false,
+    "rank_buffer": 2,
+    "alpha_buffer": 0.5
+  },
+  "basis_estimation_lock": {
+    "basis_samples": 24,
+    "rank": 2,
+    "alpha": 0.5,
+    "beta": 0.001,
+    "perturbations": [
+      "brightness",
+      "contrast",
+      "gamma",
+      "sharpness"
+    ],
+    "perturbation_epsilon": 0.15,
+    "selection_rule": "For each source fold, sort source-train rows by SHA256('MedAIN_STAGE9A_V1|<target_domain>|<sample_uid>') and select the first 24. The rule is independent of CSV row order and model seed.",
+    "same_samples_for_all_variants": true
+  },
+  "variants": {
+    "TP": {
+      "label": "Task-protected",
+      "basis": "top-r generalized eigenvectors of A u = lambda (T + beta I) u, thin QR"
+    },
+    "AO": {
+      "label": "Acquisition-only",
+      "basis": "top-r eigenvectors of normalized A, thin QR"
+    },
+    "RAND": {
+      "label": "Matched-rank random projection",
+      "basis": "deterministic Gaussian basis followed by thin QR; fold/stage-specific locked seed"
+    },
+    "OFF": {
+      "label": "Projection-off reference",
+      "basis": "none"
+    }
+  },
+  "primary_mechanistic_endpoints": [
+    "task_leakage_ratio for TP, AO, RAND at stage1 and stage2",
+    "acquisition_capture_ratio for TP, AO, RAND at stage1 and stage2",
+    "protection_efficiency = acquisition_capture_ratio / (task_leakage_ratio + 1e-12)"
+  ],
+  "secondary_endpoints": [
+    "source-validation mean foreground Dice for OFF, TP, AO, RAND",
+    "source-validation loss for OFF, TP, AO, RAND",
+    "pixelwise prediction agreement with OFF",
+    "principal angles between TP and AO subspaces",
+    "all CA/CT matrices and TP/AO/RAND bases saved as NPZ"
+  ],
+  "pilot_go_rule": {
+    "purpose": "Decide whether a full confirmatory Stage9 expansion is scientifically justified; pilot is not final inferential evidence.",
+    "requirements": [
+      "TP task leakage < AO in at least 4/5 folds at stage1 AND at least 4/5 folds at stage2.",
+      "TP protection efficiency > AO in at least 4/5 folds at stage1 AND at least 4/5 folds at stage2.",
+      "TP acquisition capture > RAND in at least 4/5 folds at stage1 AND at least 4/5 folds at stage2.",
+      "Source-validation task preservation must not show a systematic contrary pattern: TP validation Dice >= AO in at least 3/5 folds OR the mean TP-AO Dice difference must be non-negative."
+    ],
+    "if_go": "Expand to seeds 2207 and 3301 under the same locked protocol, then perform the confirmatory 15-pair analysis; only after confirmatory support consider end-to-end TP vs AO training.",
+    "if_no_go": "Freeze MedAIN algorithmic novelty development; do not add larger benchmark or additional tuning."
+  },
+  "claim_boundary": "Stage9A pilot can support or refute the necessity of task-protected basis selection within this retinal segmentation setting. It cannot establish universal superiority, cross-modality generality, or external predictive superiority."
+}

@@ -1,0 +1,9 @@
+{
+  "README_FA.md": "d85e83654a3af9999707404a6ff859cc2a5c5984a8fde437a86d653a91d5cea4",
+  "STAGE9A_PILOT_PROTOCOL_LOCK_v1_0.json": "a4d0c94c25acea3a9372688b5ea0cc65cbaa6e0afbb698b4b6eb46e87e3a9827",
+  "run_stage9a_pilot.sh": "cad7f88eaa9d46725eb6f19679c7bb2f8e18429f3a7ada75d4a40e3c53d5ec60",
+  "stage9_anchor_train.py": "5a3e7cf362b31b1b39c060ff9e6e037df95c39656dd62c599add30e1a0544561",
+  "stage9a_aggregate.py": "ac68efd68f51f5f1f02933fe70b0e600f7fb05239f32e646aecd0cbde2059ac3",
+  "stage9a_mechanistic_eval.py": "c3d297f3626063984ef49e5777f0efd5bede820ad8279f6bae5f1888d60a13ce",
+  "stage9a_status.sh": "ccdca96be405eb5b6a9d1b0a9fe3e990391a28f99ce02493a34356b9e20d6f94"
+}

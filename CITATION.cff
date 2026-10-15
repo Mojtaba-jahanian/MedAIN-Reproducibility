@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the associated MedAIN research manuscript if and when it is formally published; this is a preliminary research code and results snapshot."
+title: "MedAIN: Audited code and retrospective analysis artifacts"
+type: software
+authors:
+  - family-names: "Jahanian"
+    given-names: "Mojtaba"
+version: "0.1.0-research-snapshot"
+date-released: "2026-10-15"
+repository-code: "https://github.com/Mojtaba-jahanian/MedAIN-Reproducibility"

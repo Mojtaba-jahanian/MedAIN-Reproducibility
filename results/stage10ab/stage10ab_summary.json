@@ -1,0 +1,362 @@
+{
+  "stage": "10-AB",
+  "version": "Stage10AB_v1_sourceval_preanalysis_20261015",
+  "classification": "EXPLORATORY_SOURCE_VALIDATION_ONLY",
+  "primary_definition": "Predicted foreground (classes 1/2) at GT background pixels farther than 32 px from all reference foreground; 8-connected remote error components.",
+  "sensitivity_thresholds_px": [
+    16,
+    48
+  ],
+  "summary": {
+    "OFF": {
+      "n_image_seed_pairs": 842,
+      "mean_remote_fp_pixels": 0.6935866983372921,
+      "median_remote_fp_pixels": 0.0,
+      "fraction_any_remote_fp": 0.007125890736342043,
+      "fraction_component_ge64px": 0.0023752969121140144,
+      "mean_largest_component_px": 0.6935866983372921,
+      "total_remote_fp_pixels": 584
+    },
+    "TP": {
+      "n_image_seed_pairs": 842,
+      "mean_remote_fp_pixels": 6.966745843230404,
+      "median_remote_fp_pixels": 0.0,
+      "fraction_any_remote_fp": 0.0166270783847981,
+      "fraction_component_ge64px": 0.009501187648456057,
+      "mean_largest_component_px": 6.7042755344418055,
+      "total_remote_fp_pixels": 5866
+    },
+    "AO": {
+      "n_image_seed_pairs": 842,
+      "mean_remote_fp_pixels": 9.137767220902612,
+      "median_remote_fp_pixels": 0.0,
+      "fraction_any_remote_fp": 0.043942992874109264,
+      "fraction_component_ge64px": 0.014251781472684086,
+      "mean_largest_component_px": 8.129453681710213,
+      "total_remote_fp_pixels": 7694
+    },
+    "RAND": {
+      "n_image_seed_pairs": 842,
+      "mean_remote_fp_pixels": 0.7743467933491687,
+      "median_remote_fp_pixels": 0.0,
+      "fraction_any_remote_fp": 0.007125890736342043,
+      "fraction_component_ge64px": 0.0023752969121140144,
+      "mean_largest_component_px": 0.7648456057007126,
+      "total_remote_fp_pixels": 652
+    }
+  },
+  "fold_summary": {
+    "BinRushed": {
+      "OFF": {
+        "mean_remote_fp_pixels": 3.2954545454545454,
+        "large_component_images": 1,
+        "n_image_seed_pairs": 132
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 40.234848484848484,
+        "large_component_images": 5,
+        "n_image_seed_pairs": 132
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 42.34848484848485,
+        "large_component_images": 3,
+        "n_image_seed_pairs": 132
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 3.8484848484848486,
+        "large_component_images": 1,
+        "n_image_seed_pairs": 132
+      }
+    },
+    "Magrabia": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.8525641025641025,
+        "large_component_images": 1,
+        "n_image_seed_pairs": 156
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 1.5769230769230769,
+        "large_component_images": 2,
+        "n_image_seed_pairs": 156
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 5.076923076923077,
+        "large_component_images": 3,
+        "n_image_seed_pairs": 156
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.7564102564102564,
+        "large_component_images": 1,
+        "n_image_seed_pairs": 156
+      }
+    },
+    "MESSIDOR_Base1": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.0,
+        "large_component_images": 0,
+        "n_image_seed_pairs": 212
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 0.0,
+        "large_component_images": 0,
+        "n_image_seed_pairs": 212
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 1.1367924528301887,
+        "large_component_images": 1,
+        "n_image_seed_pairs": 212
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.0,
+        "large_component_images": 0,
+        "n_image_seed_pairs": 212
+      }
+    },
+    "MESSIDOR_Base2": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.09411764705882353,
+        "large_component_images": 0,
+        "n_image_seed_pairs": 170
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 0.6352941176470588,
+        "large_component_images": 0,
+        "n_image_seed_pairs": 170
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 4.041176470588235,
+        "large_component_images": 3,
+        "n_image_seed_pairs": 170
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.15294117647058825,
+        "large_component_images": 0,
+        "n_image_seed_pairs": 170
+      }
+    },
+    "MESSIDOR_Base3": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.0,
+        "large_component_images": 0,
+        "n_image_seed_pairs": 172
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 1.1686046511627908,
+        "large_component_images": 1,
+        "n_image_seed_pairs": 172
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 2.2325581395348837,
+        "large_component_images": 2,
+        "n_image_seed_pairs": 172
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.0,
+        "large_component_images": 0,
+        "n_image_seed_pairs": 172
+      }
+    }
+  },
+  "per_run": {
+    "BinRushed_seed2207": {
+      "OFF": {
+        "mean_remote_fp_pixels": 6.5606060606060606,
+        "n_large_component": 1
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 64.78787878787878,
+        "n_large_component": 4
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 65.15151515151516,
+        "n_large_component": 2
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 7.151515151515151,
+        "n_large_component": 1
+      }
+    },
+    "BinRushed_seed3301": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.030303030303030304,
+        "n_large_component": 0
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 15.681818181818182,
+        "n_large_component": 1
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 19.545454545454547,
+        "n_large_component": 1
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.5454545454545454,
+        "n_large_component": 0
+      }
+    },
+    "Magrabia_seed2207": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 0.9743589743589743,
+        "n_large_component": 1
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 0.8717948717948718,
+        "n_large_component": 1
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.05128205128205128,
+        "n_large_component": 0
+      }
+    },
+    "Magrabia_seed3301": {
+      "OFF": {
+        "mean_remote_fp_pixels": 1.705128205128205,
+        "n_large_component": 1
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 2.1794871794871793,
+        "n_large_component": 1
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 9.282051282051283,
+        "n_large_component": 2
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 1.4615384615384615,
+        "n_large_component": 1
+      }
+    },
+    "MESSIDOR_Base1_seed2207": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      }
+    },
+    "MESSIDOR_Base1_seed3301": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 2.2735849056603774,
+        "n_large_component": 1
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      }
+    },
+    "MESSIDOR_Base2_seed2207": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.18823529411764706,
+        "n_large_component": 0
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 0.7529411764705882,
+        "n_large_component": 0
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 4.470588235294118,
+        "n_large_component": 1
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.3058823529411765,
+        "n_large_component": 0
+      }
+    },
+    "MESSIDOR_Base2_seed3301": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 0.5176470588235295,
+        "n_large_component": 0
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 3.611764705882353,
+        "n_large_component": 2
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      }
+    },
+    "MESSIDOR_Base3_seed2207": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      }
+    },
+    "MESSIDOR_Base3_seed3301": {
+      "OFF": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      },
+      "TP": {
+        "mean_remote_fp_pixels": 2.3372093023255816,
+        "n_large_component": 1
+      },
+      "AO": {
+        "mean_remote_fp_pixels": 4.465116279069767,
+        "n_large_component": 2
+      },
+      "RAND": {
+        "mean_remote_fp_pixels": 0.0,
+        "n_large_component": 0
+      }
+    }
+  },
+  "n_reports": 10,
+  "n_image_seed_pairs": 842,
+  "distinct_independent_images_claimed": false,
+  "subgroup_fold_dependence": "The five LODO training domains overlap; images are reused across source-validation splits and seeds.",
+  "transferred_test_assessment": false,
+  "training_performed": false,
+  "prospective_go_confirmed": false,
+  "submission_decision": "SCIENTIFIC_REVIEW_REQUIRED",
+  "report_sha256": {
+    "BinRushed_seed2207": "51a284de68fc9152f92982e5407e6127c2f2e59fcb1a5b9cb9fb6bca347ebd29",
+    "BinRushed_seed3301": "116f120cbbb05534c7702f3655f2c454058229552530f2d5b894704d4d2f51f4",
+    "Magrabia_seed2207": "77c7a05e4de976df020e8411945bab85db77eb0f7deecd7a13e55af8d1afcd43",
+    "Magrabia_seed3301": "8071e93075e6ba373b2fa4ba347a2fe94313ce4a2344a6e541cd9d3d23b23589",
+    "MESSIDOR_Base1_seed2207": "2f38d330e9bc1431706cb00e574d47f22854500f8c7aa93123e405473d1413df",
+    "MESSIDOR_Base1_seed3301": "0ecf827f9f08e3d4ef4b6f40434b783a909e83a4151c65f0400e57ef140c5e57",
+    "MESSIDOR_Base2_seed2207": "17dd39c22bb6c272c99a4f7276aeff2b31e5ba743999b10ea2e599c283d690c8",
+    "MESSIDOR_Base2_seed3301": "edef864619efa8f058ea95de0576c93a7c54c4b8c4141aebb782f6c020a7237a",
+    "MESSIDOR_Base3_seed2207": "5c4c3465428644318cddf61a62b5d39a1d2c7d03654d008383f695389f78a836",
+    "MESSIDOR_Base3_seed3301": "87e5883d48e0675399124700f0524cb6f92d6455750fbb2b15809f88a06417cd"
+  }
+}
